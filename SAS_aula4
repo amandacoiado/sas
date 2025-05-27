@@ -1,0 +1,15 @@
+/***************************************************************************
+SAS - Aula 4
+
+A diretora solicitou um relatório para análise geral das agências.
+Ela gostaria de fazer um estudo que contemplasse a quantidade de clientes por agência,
+tempo de operação da agência desde a sua abertura, quantidade de contas, 
+quantidade média de contas por cliente, idade média das contas, 
+quantidade de contas por modalidade, 
+o percentual de contas de clientes locais (da mesma cidade da agência),
+percentual de transações por tipo de transações, valor médio de cada tipo.
+
+Ela também gostaria de enviar um relatório para cada agência com um resumo 
+das movimentações por cliente, mas deixou a equipe livre para trazer as informações 
+que entendesse pertinentes para auxiliar na tomada de decisões pelas agências.
+****************************************************************************/
