@@ -1,0 +1,55 @@
+LIBNAME RAMOS '/home/u62010080/bancoramos';
+
+/*lista todas as tabelas da biblioteca*/
+PROC DATASETS LIBRARY=RAMOS;
+RUN;
+
+PROC SQL;
+	SELECT *
+	FROM RAMOS.CIDADES;
+RUN;
+
+PROC SQL;
+	SELECT *
+	FROM RAMOS.estados;
+RUN;
+
+PROC SQL OUTOBS=100;
+	SELECT *
+	FROM RAMOS.CLIENTES;
+RUN;
+
+PROC PRINT DATA=RAMOS.CLIENTES(OBS=100) label;
+	LABEL CLIENTE_ID='Cód.' NOME='Nome';
+	TITLE "Relatório de Clientes (Amostra de 100 registros)";
+RUN;
+
+/* 7) Quantas agências existem no Banco Ramos? */
+proc sql;
+	CREATE TABLE RAMOS.RESPOSTA7 AS
+	SELECT COUNT(*) AS QTDE_AGENCIAS
+	FROM RAMOS.AGENCIAS;
+run;
+
+/* 8) Quantas contas existem no Banco Ramos? */
+proc sql;
+	CREATE TABLE RAMOS.RESPOSTA8 AS
+	SELECT COUNT(*) AS QTDE_CONTAS
+	FROM RAMOS.CONTAS;
+run;
+
+/* 9) Quantos registros de transações há? */
+proc sql;
+	CREATE TABLE RAMOS.RESPOSTA9 AS
+	SELECT COUNT(*) AS QTDE_TRANSACOES
+	FROM RAMOS.TRANSACOES;
+run;
+
+
+/* 10) Quantas registros de transações há no ano de 2024? */
+proc sql;
+	CREATE TABLE RAMOS.RESPOSTA10 AS
+	SELECT COUNT(*) AS QTDE_TRANSACOES
+	FROM RAMOS.TRANSACOES
+	WHERE YEAR(DATEPART(DATA_HORA)) = 2024;
+run;
